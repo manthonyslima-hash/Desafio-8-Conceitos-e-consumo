@@ -1,0 +1,304 @@
+
+/* ==============================
+   CONFIGURAÇÕES GERAIS
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --vinho: #800020;
+    --vinho-escuro: #590017;
+    --vinho-claro: #a83250;
+    --fundo: #f8f5f6;
+    --branco: #ffffff;
+    --texto: #30252a;
+    --texto-secundario: #81757a;
+    --borda: #eadfe3;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* ==============================
+   CONTAINER PRINCIPAL
+============================== */
+
+.container {
+    max-width: 750px;
+    width: 100%;
+    margin: 0 auto;
+    background: var(--branco);
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 8px 35px rgba(89, 0, 23, 0.08);
+}
+
+/* ==============================
+   CABEÇALHO
+============================== */
+
+.header {
+    margin-bottom: 35px;
+}
+
+.header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--vinho-escuro);
+    margin-bottom: 10px;
+}
+
+.header h1 span {
+    color: var(--vinho-claro);
+}
+
+.header p {
+    color: var(--texto-secundario);
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* ==============================
+   CAMPO DE CADASTRO
+============================== */
+
+.task-form {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.task-form input {
+    flex: 1;
+}
+
+input,
+select {
+    font-family: inherit;
+    outline: none;
+}
+
+.task-form input,
+.task-controls input,
+.task-controls select {
+    border: 1px solid var(--borda);
+    background: #fdfbfc;
+    border-radius: 9px;
+    padding: 14px 16px;
+    font-size: 14px;
+    color: var(--texto);
+    transition: 0.3s;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--vinho);
+    box-shadow: 0 0 0 3px rgba(128, 0, 32, 0.08);
+}
+
+input::placeholder {
+    color: #aa9da2;
+}
+
+/* ==============================
+   BOTÃO ADICIONAR
+============================== */
+
+.task-form button {
+    background: var(--vinho);
+    color: var(--branco);
+    border: none;
+    border-radius: 9px;
+    padding: 14px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.task-form button:hover {
+    background: var(--vinho-escuro);
+    transform: translateY(-2px);
+}
+
+.task-form button i {
+    margin-right: 5px;
+}
+
+/* ==============================
+   PESQUISA E FILTROS
+============================== */
+
+.task-controls {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 35px;
+}
+
+.task-controls input {
+    flex: 1;
+}
+
+.task-controls select {
+    cursor: pointer;
+    min-width: 125px;
+}
+
+/* ==============================
+   LISTA DE TAREFAS
+============================== */
+
+.task-section h2 {
+    font-size: 20px;
+    color: var(--vinho-escuro);
+    margin-bottom: 20px;
+}
+
+#task-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#task-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: #fdfafb;
+    border: 1px solid var(--borda);
+    border-left: 4px solid var(--vinho);
+    padding: 16px;
+    border-radius: 9px;
+    transition: 0.3s;
+}
+
+#task-list li:hover {
+    background: #faf4f6;
+    transform: translateX(3px);
+}
+
+/* ==============================
+   MENSAGEM DE LISTA VAZIA
+============================== */
+
+#empty-message {
+    text-align: center;
+    color: var(--texto-secundario);
+    padding: 30px 10px;
+    font-size: 14px;
+}
+
+/* ==============================
+   RODAPÉ
+============================== */
+
+.footer {
+    border-top: 1px solid var(--borda);
+    margin-top: 35px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.footer p {
+    font-size: 13px;
+    color: var(--texto-secundario);
+}
+
+/* ==============================
+   RESPONSIVIDADE
+============================== */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px 12px;
+    }
+
+    .container {
+        padding: 25px 18px;
+    }
+
+    .header h1 {
+        font-size: 27px;
+    }
+
+    .task-form {
+        flex-direction: column;
+    }
+
+    .task-form button {
+        width: 100%;
+    }
+
+    .task-controls {
+        flex-direction: column;
+    }
+
+    .task-controls select {
+        width: 100%;
+    }
+
+}
+
+/* ==============================
+   ELEMENTOS DAS TAREFAS
+============================== */
+
+.task-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    min-width: 0;
+}
+
+.task-content input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    accent-color: var(--vinho);
+    cursor: pointer;
+}
+
+.task-text {
+    font-size: 14px;
+    color: var(--texto);
+    overflow-wrap: anywhere;
+}
+
+.task-text.completed {
+    text-decoration: line-through;
+    color: var(--texto-secundario);
+}
+
+.task-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.delete-btn {
+    background: #f8e9ed;
+    color: var(--vinho);
+    border: none;
+    padding: 9px 11px;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.delete-btn:hover {
+    background: var(--vinho);
+    color: white;
+}
+

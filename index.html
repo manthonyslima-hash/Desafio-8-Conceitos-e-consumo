@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>To-Do List | Minhas Tarefas</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- Cabeçalho -->
+        <header class="header">
+            <h1>Minhas Tarefas<span>.</span></h1>
+            <p>Organize seu dia e acompanhe suas atividades.</p>
+        </header>
+
+        <!-- Área de cadastro -->
+        <section class="task-form">
+
+            <input
+                type="text"
+                id="task-input"
+                placeholder="Digite uma nova tarefa..."
+            >
+
+            <button id="add-btn">
+                <i class="fa-solid fa-plus"></i>
+                Adicionar
+            </button>
+
+        </section>
+
+        <!-- Pesquisa e filtros -->
+        <section class="task-controls">
+
+            <input
+                type="text"
+                id="search-input"
+                placeholder="Pesquisar tarefas..."
+            >
+
+            <select id="filter-select">
+                <option value="all">Todas</option>
+                <option value="completed">Feitas</option>
+                <option value="pending">A fazer</option>
+            </select>
+
+        </section>
+
+        <!-- Lista de tarefas -->
+        <section class="task-section">
+
+            <h2>Minha lista</h2>
+
+            <ul id="task-list">
+
+                <!-- As tarefas serão adicionadas pelo JavaScript -->
+
+            </ul>
+
+            <p id="empty-message">
+                Nenhuma tarefa cadastrada ainda.
+            </p>
+
+        </section>
+
+        <!-- Rodapé -->
+        <footer class="footer">
+            <p>Organize suas tarefas e seja produtivo!</p>
+        </footer>
+
+    </main>
+
+    <!-- JavaScript -->
+    <script src="js/scripts.js"></script>
+
+</body>
+</html>
